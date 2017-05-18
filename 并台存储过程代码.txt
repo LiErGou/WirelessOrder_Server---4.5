@@ -1,0 +1,30 @@
+CREATE PROCEDURE `new_proc`(IN tableId1 INTEGER(11), IN tableId2 INTEGER(11))
+    NOT DETERMINISTIC
+    SQL SECURITY DEFINER
+    COMMENT ''
+BEGIN
+  
+      declare @perNum integer,@oId1 integer,@oId2 integer;
+     
+     select @perNum=personNum from ordertbl as ot where
+     ot.tableId =tableId1
+     and ot.isPay = 0;
+     
+     select @oId1=id from ordertbl as ot where
+     ot.tableId = tableId1
+     and ot.isPay = 0;
+     
+     select @oId2=id from ordertbl as ot where
+     ot.tableId = tableId2
+     and ot.isPay = 0;
+
+     update ordertbl
+     set personNum = personNum + @perNum
+     where id = @oId2;
+     update orderdetailtbl set orderId = 2 where orderId = 4;
+     update tabletbl set flag = 0,description='¿Õ×À' where id = tableId1;
+     
+     delete from ordertbl where id = @oId1;
+     
+
+END;
