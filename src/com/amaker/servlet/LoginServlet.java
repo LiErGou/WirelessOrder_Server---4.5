@@ -1,5 +1,6 @@
 package com.amaker.servlet;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -28,7 +29,11 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("account");
 		String password = request.getParameter("password");
 		int station = Integer.valueOf(request.getParameter("station")).intValue();
-		//System.out.println("station="+station);
+		File file = new File("test.txt");
+		if (!file.exists()) {
+		    file.mkdirs();
+		}
+		System.out.println(file.getAbsolutePath());
 		User u = dao.login(username, password,station);
 		if(u!=null){
 			// 响应客户端内容，登录成功

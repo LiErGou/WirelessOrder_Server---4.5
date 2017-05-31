@@ -55,10 +55,6 @@ public class UserRegisterImpl implements UserRegister {
 			pstmt.setString(5, gender);
 			pstmt.setInt(6, permission);
 			pstmt.setString(7, remark);
-//			pstmt.setInt(8, likeFlavor);
-//			pstmt.setInt(9, dislikeFlavor);
-//			pstmt.setInt(10, likeMaterial);
-//			pstmt.setInt(11, dislikeMaterial);
 			// Ö´ÐÐ¸üÐÂ
 			pstmt.executeUpdate();
 			

@@ -33,10 +33,6 @@ public class UserRegisterServlet extends HttpServlet {
 		String username = request.getParameter("account");
 		String password = request.getParameter("password");
 		int gender=Integer.valueOf(request.getParameter("gender")).intValue();
-		int likeFlavor =  1;
-		int dislikeFlavor =1; 
-		int likeMaterial = 1;
-		int dislikeMaterial = 1;
 		//接收客户端发来喜欢口味数组，并读取到数组中
 		for(int i=0;i<lf.length;i++){
 			lf[i]=Integer.valueOf(request.getParameter("lf["+i+"]")).intValue();

@@ -71,5 +71,5 @@ public class GetMenusServlet extends HttpServlet {
 		JSONArray json = new JSONArray(list);
 		return json.toString(2);
 	}
-
+	
 }

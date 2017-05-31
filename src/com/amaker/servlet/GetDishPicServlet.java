@@ -37,6 +37,9 @@ public class GetDishPicServlet extends HttpServlet{
 		ClassLoader cl = this.getClass().getClassLoader();
 		 //Па¶Ф/classes
 		in = cl.getResourceAsStream("image/"+image+".png");
+		
+		String path=this.getClass().getClassLoader().getResource("/").getPath(); 
+		System.out.println("path="+path);
 		try {
 			IOUtils.copy(in, response.getOutputStream());
 		} catch (IOException e) {
