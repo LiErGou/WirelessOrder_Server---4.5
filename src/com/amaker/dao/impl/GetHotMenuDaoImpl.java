@@ -29,7 +29,7 @@ public class GetHotMenuDaoImpl implements GetMenuDao{
 			List<DishMenu> list = new ArrayList<DishMenu>();
 			DishMenu menu;
 			int i=0;
-			while (rs.next()&&i<10) {
+			while (rs.next()) {
 				int id = rs.getInt(1);
 				int typeId=rs.getInt(2);
 				String name=rs.getString(3);
